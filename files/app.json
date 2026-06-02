@@ -5,7 +5,7 @@
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/invoice_logo.jpeg",
-    "scheme": ["invoicegenerator"],
+    "scheme": "invoicegenerator",
     "userInterfaceStyle": "automatic",
     "ios": {
       "supportsTablet": true

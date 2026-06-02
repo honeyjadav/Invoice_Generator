@@ -37,3 +37,15 @@ yarn-error.*
 *.tsbuildinfo
 
 app-example
+# Build artifacts
+*.aab
+*.apk
+*.ipa
+
+# Scratch / backup folders
+BillGenerator/temp/
+BillGenerator/files/
+BillGenerator/services/
+
+# Root orphan lock file
+/package-lock.json
