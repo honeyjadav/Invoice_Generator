@@ -1,4 +1,4 @@
-import { getDatabase } from './db';
+import { getDatabase } from "./db";
 
 export function initializeDatabase() {
   const db = getDatabase();
@@ -39,7 +39,13 @@ export function initializeDatabase() {
       created_at TEXT NOT NULL
     );
   `);
-
+  try {
+    db.execSync(
+      `ALTER TABLE invoices ADD COLUMN tax_mode TEXT NOT NULL DEFAULT 'cgst_sgst';`,
+    );
+  } catch {
+    // Column already exists, ignore
+  }
   db.execSync(`
     CREATE TABLE IF NOT EXISTS invoice_items (
       id INTEGER PRIMARY KEY AUTOINCREMENT,

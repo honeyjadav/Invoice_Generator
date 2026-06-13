@@ -14,17 +14,6 @@ export default function ActionButtons({
   onClear: () => void;
   onSave: () => void;
 }) {
-  const handleGenerateInvoice = () => {
-    if (!businessName.trim()) {
-      Alert.alert('Error', 'Please enter your business name');
-      return;
-    }
-    if (products.some((p) => !p.name.trim() || !p.amount)) {
-      Alert.alert('Error', 'Please fill all product fields');
-      return;
-    }
-    onSave();
-  };
 
   const handleClearForm = () => {
     Alert.alert('Confirm', 'Clear all fields?', [
@@ -38,7 +27,7 @@ export default function ActionButtons({
       <TouchableOpacity style={styles.clearButton} onPress={handleClearForm}>
         <Text style={styles.clearText}>Clear</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.generateButton} onPress={handleGenerateInvoice}>
+      <TouchableOpacity style={styles.generateButton} onPress={onSave}>
         <Text style={styles.generateText}>Save Invoice</Text>
       </TouchableOpacity>
     </View>

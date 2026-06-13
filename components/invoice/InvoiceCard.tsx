@@ -10,7 +10,7 @@ export default function InvoiceCard({
   onDelete: (id: number) => void;
 }) {
   const [showDetail, setShowDetail] = useState(false);
-  const date = new Date(invoice.created_at).toLocaleDateString();
+  const date = invoice.invoice_date;
 
   const handleDelete = () => {
     Alert.alert('Delete Invoice', `Delete ${invoice.invoice_number}?`, [
